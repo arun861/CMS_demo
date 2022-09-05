@@ -63,5 +63,29 @@
                 </div>
              </div>
         </div>
+	<script>
+            var slideImg = document.getElementById("slideImg");
+
+            var images =new Array(
+                "{% static 'images/image.jpg' %}",
+                "{% static 'images/1.jpg' %}",
+                "{% static 'images/2.jpg' %}",
+                "{% static 'images/3.jpg' %}"
+            );
+
+            var len = images.length;
+            var i =0;
+            
+            function slider(){
+                if(i > len-1){
+                    i=0;
+
+                }
+                slideImg.src = images[i];
+                i++;
+                setTimeout('slider()',3000);
+
+            }
+        </script>
     </body>
 </html>
